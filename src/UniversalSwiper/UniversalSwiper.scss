@@ -1,0 +1,184 @@
+
+body {
+  overflow-x: hidden;
+}
+
+.universal-swiper {
+  width: 100%;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.universal-swiper__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  overflow: hidden;
+}
+
+.universal-swiper__title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1f2937;
+  margin: 0 0 40px 0;
+  text-align: center;
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+  }
+}
+
+.universal-swiper__wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.universal-swiper__nav-btn {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  border: 2px solid #e5e7eb;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  z-index: 100;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    border-color: #3b82f6;
+    background: #f8fafc;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.universal-swiper__nav-btn--prev {
+  order: 1;
+}
+
+.universal-swiper__nav-btn--next {
+  order: 3;
+}
+
+.universal-swiper__nav-icon {
+  fill: #6b7280;
+  transition: fill 0.3s ease;
+
+  .universal-swiper__nav-btn:hover & {
+    fill: #3b82f6;
+  }
+}
+
+.universal-swiper__slider {
+  flex: 1;
+  order: 2;
+  overflow: hidden;
+  padding-bottom: 60px;
+  width: 100%;
+
+  .swiper-wrapper {
+    transition-timing-function: ease-in-out;
+  }
+
+  .swiper-slide {
+    flex-shrink: 0;
+    height: auto;
+    min-height: 400px;
+
+    @media (max-width: 768px) {
+      min-height: 350px;
+    }
+  }
+}
+
+.universal-swiper__slide {
+  width: 100%;
+  height: 100%;
+  display: block;
+
+  > * {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.universal-swiper__empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  border: 2px dashed #e5e7eb;
+  border-radius: 12px;
+}
+
+.universal-swiper__empty-text {
+  color: #9ca3af;
+  font-size: 1.125rem;
+}
+
+.universal-swiper__pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 10;
+}
+
+.universal-swiper__pagination-bullet {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #d1d5db;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 1;
+  border: none;
+  padding: 0;
+
+  &:hover {
+    background: #9ca3af;
+  }
+
+  @media (max-width: 768px) {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+.universal-swiper__pagination-bullet--active {
+  background: #000000;
+
+  &:hover {
+    background: #333333;
+  }
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .universal-swiper__wrapper {
+    gap: 15px;
+  }
+}
